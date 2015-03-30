@@ -114,6 +114,15 @@
                         });
                     };
 
+                    /////////// Changes to fix placeholder dropdown bug ////////////////////
+                    ['saveSnapshot'].forEach(function (event) {
+                    //['dataReady', 'change', 'saveSnapshot'].forEach(function (event) {
+                        instance.on(event, function syncView() {
+                          ngModel.$setViewValue(instance.getData() || '');
+                        });
+                    });
+                    ///////////////////////////////////////////////////////////////
+
                     //instance.on('pasteState',   setModelData);
                     instance.on('change', setModelData);
                     instance.on('blur', setModelData);
