@@ -120,10 +120,10 @@
                     });
                     ///////////////////////////////////////////////////////////////
 
-                    //instance.on('pasteState',   setModelData);
+                    instance.on('pasteState',   setModelData);
                     instance.on('change', setModelData);
                     instance.on('blur', setModelData);
-                    //instance.on('key',          setModelData); // for source view
+                    instance.on('key', setModelData); // for source view
 
                     instance.on('instanceReady', function () {
                         scope.$broadcast('ckeditor.ready');
